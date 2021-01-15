@@ -1,3 +1,5 @@
+package algo.expert.solutions.easy
+
 fun twoNumberSum(array: MutableList<Int>, targetSum: Int): List<Int> {
     array.forEach { x ->
         array.forEach { y ->
@@ -10,5 +12,5 @@ fun twoNumberSum(array: MutableList<Int>, targetSum: Int): List<Int> {
     return listOf()
 }
 
-twoNumberSum(mutableListOf(1, 5, 2, 4, 6, 8, 9), 6)
-twoNumberSum(mutableListOf(3, 5, -4, 8, 11, 1, -1, 6), 10)
+//twoNumberSum(mutableListOf(1, 5, 2, 4, 6, 8, 9), 6)
+//twoNumberSum(mutableListOf(3, 5, -4, 8, 11, 1, -1, 6), 10)

@@ -1,3 +1,5 @@
+package algo.expert.solutions.easy
+
 import java.lang.Math.abs
 import java.util.Stack
 
