@@ -11,7 +11,6 @@ class TestUtils {
     fun testTreeUtils() {
         val jsonTree = """
             {
-              "tree": {
                 "nodes": [
                   {"id": "1", "left": "2", "right": "3", "value": 1},
                   {"id": "2", "left": "4", "right": "5", "value": 2},
@@ -25,7 +24,6 @@ class TestUtils {
                   {"id": "10", "left": null, "right": null, "value": 10}
                 ],
                 "root": "1"
-              }
             }
             """.trimIndent()
 

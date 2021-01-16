@@ -1,32 +1,31 @@
 package algo.expert.solutions.easy
 
-import java.util.*
-
-open class BinaryTree(value: Int) {
-    var value = value
-    var left: BinaryTree? = null
-    var right: BinaryTree? = null
-}
+import algo.expert.utils.TreeNode as BinaryTree
 
 fun branchSums(root: BinaryTree): List<Int> {
-    var stack = Stack<BinaryTree>()
-    stack.push(root)
-
-    var sums = listOf<Int>()
-    while (!stack.isEmpty()) {
-        var next = stack.pop()
-        if (next.left != null) {
-            stack.push(next.left)
-        }
-
-        if (next.right != null) {
-            stack.push(next.right)
-        }
-
-        println(next.value)
-    }
-
-    return listOf()
+    return branchSumsRecursive(root, mutableListOf())
 }
 
+fun branchSumsRecursive(root: BinaryTree, sums: MutableList<Int>): List<Int> {
+    val sumsInner: MutableList<Int> = if (sums.size == 0) {
+        mutableListOf(root.value)
+    } else {
+        sums.map { it + root.value }.toMutableList()
+    }
 
+    if (root.left == null && root.right == null) {
+        return sumsInner
+    }
+
+    var leftSums = listOf<Int>()
+    root.left?.let { left ->
+        leftSums = branchSumsRecursive(left, sumsInner)
+    }
+
+    var rightSums = listOf<Int>()
+    root.right?.let { right ->
+        rightSums = branchSumsRecursive(right, sumsInner)
+    }
+
+    return leftSums + rightSums
+}
