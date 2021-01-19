@@ -1,14 +1,8 @@
 package algo.expert.solutions
 
-import algo.expert.solutions.easy.branchSums
-import algo.expert.solutions.easy.isValidSubsequence
-import algo.expert.solutions.easy.nodeDepths
-import algo.expert.solutions.easy.twoNumberSum
-import algo.expert.utils.TreeNode
-import algo.expert.utils.load
-import java.util.*
+import algo.expert.solutions.easy.*
+import algo.expert.utils.loadTree
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class TestEasySolutions {
@@ -43,7 +37,7 @@ class TestEasySolutions {
           "root": "1"
         }"""
 
-        val tree = load(jsonTree)
+        val tree = loadTree(jsonTree)
         assertNotNull(tree)
         val result = branchSums(tree)
         println(result)
@@ -68,9 +62,24 @@ class TestEasySolutions {
             }
         """
 
-        val tree = load(jsonTree)
+        val tree = loadTree(jsonTree)
         assertNotNull(tree)
         val result = nodeDepths(tree)
         println(result)
+    }
+
+    @Test
+    fun testDepthFirstSearch() {
+        var a = Node("A")
+        var b = Node("B")
+        var c = Node("C")
+        var d = Node("D")
+
+        a.children.add(b)
+        a.children.add(c)
+        b.children.add(d)
+        d.children.add(a)
+
+        a.depthFirstSearch()
     }
 }

@@ -21,7 +21,7 @@ Load tree given a json object:
     "root": "1"
 }
  */
-fun load(jsonTreeSerialized: String): TreeNode? {
+fun loadTree(jsonTreeSerialized: String): TreeNode? {
 
     var tree: TreeNode? = null
     Klaxon().parse<JsonTree>(jsonTreeSerialized)?.let { jsonTree ->

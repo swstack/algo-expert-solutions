@@ -1,6 +1,8 @@
 package algo.expert.solutions
 
+import algo.expert.utils.GraphNode
 import algo.expert.utils.TreeNode
+import algo.expert.utils.loadGraph
 import org.junit.Test
 import java.util.*
 import kotlin.test.assertEquals
@@ -27,7 +29,7 @@ class TestUtils {
             }
             """.trimIndent()
 
-        val root = algo.expert.utils.load(jsonTree)
+        val root = algo.expert.utils.loadTree(jsonTree)
         assertNotNull(root)
         root.let { node ->
             var stack = Stack<TreeNode>()
@@ -48,5 +50,44 @@ class TestUtils {
 
             assertEquals(visited, listOf(1, 3, 7, 6, 2, 5, 10, 4, 9, 8))
         }
+    }
+
+    @Test
+    fun testGraphUtils() {
+        val json = """
+            {
+                "nodes": [
+                  {"children": ["B", "C", "D"], "id": "A", "value": "A"},
+                  {"children": ["E", "F"], "id": "B", "value": "B"},
+                  {"children": [], "id": "C", "value": "C"},
+                  {"children": ["G", "H"], "id": "D", "value": "D"},
+                  {"children": [], "id": "E", "value": "E"},
+                  {"children": ["I", "J"], "id": "F", "value": "F"},
+                  {"children": ["K"], "id": "G", "value": "G"},
+                  {"children": [], "id": "H", "value": "H"},
+                  {"children": [], "id": "I", "value": "I"},
+                  {"children": [], "id": "J", "value": "J"},
+                  {"children": [], "id": "K", "value": "K"}
+                ],
+                "startNode": "A"
+            }
+        """.trimIndent()
+
+        val graph = loadGraph(json)
+        assertNotNull(graph)
+
+        var stack = Stack<GraphNode>()
+        stack.push(graph)
+        var visited = mutableListOf<String>()
+        while (!stack.isEmpty()) {
+            var next = stack.pop()
+            for (child in next.children) {
+                stack.push(child)
+            }
+
+            visited.add(next.value)
+        }
+
+        assertEquals(visited, listOf("A", "D", "H", "G", "K", "C", "B", "F", "J", "I", "E"))
     }
 }
