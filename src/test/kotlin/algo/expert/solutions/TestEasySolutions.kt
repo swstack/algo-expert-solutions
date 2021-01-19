@@ -3,6 +3,7 @@ package algo.expert.solutions
 import algo.expert.solutions.easy.*
 import algo.expert.utils.loadTree
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class TestEasySolutions {
@@ -81,5 +82,11 @@ class TestEasySolutions {
         d.children.add(a)
 
         a.depthFirstSearch()
+    }
+
+    @Test
+    fun testNthFib() {
+        assertEquals(getNthFib(4), 3)
+        assertEquals(getNthFib(10), 55)
     }
 }

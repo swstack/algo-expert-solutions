@@ -1,2 +1,2 @@
 # algo-expert-solutions
-Solutions to AlgoExpert
+Kotlin solutions to AlgoExpert
