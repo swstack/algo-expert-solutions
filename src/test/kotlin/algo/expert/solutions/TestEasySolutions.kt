@@ -89,4 +89,19 @@ class TestEasySolutions {
         assertEquals(getNthFib(4), 3)
         assertEquals(getNthFib(10), 55)
     }
+
+    @Test
+    fun testProductSum() {
+        var sum1 = productSum(listOf(1, 2, 3))
+        assertEquals(sum1, 6)
+
+        var sum2 = productSum(listOf(1, 2, listOf(1, 2)))
+        assertEquals(sum2, 9)
+
+        var sum3 = productSum(listOf(5, 2, listOf(7, -1), 3, listOf(6, listOf(-13, 8), 4)))
+        assertEquals(sum3, 12)
+
+        var sum4 = productSum(listOf(5, 2, listOf(-7, -1), 3))
+        assertEquals(sum4, -6)
+    }
 }
