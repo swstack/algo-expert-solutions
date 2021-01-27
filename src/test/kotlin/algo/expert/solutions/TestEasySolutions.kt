@@ -113,4 +113,10 @@ class TestEasySolutions {
         var result2 = binarySearch(listOf(0, 1, 21, 33, 45, 45, 61, 71, 72, 73), 0)
         assertEquals(result2, 0)
     }
+
+    @Test
+    fun testMinimumWaitingTime() {
+//        assertEquals(minimumWaitingTime(mutableListOf(3, 2, 1, 2, 6)), 17)
+        assertEquals(minimumWaitingTimeBruteForce(mutableListOf(3, 2, 1, 2, 6)), 17)
+    }
 }
