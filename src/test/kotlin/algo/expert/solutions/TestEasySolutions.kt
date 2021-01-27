@@ -104,4 +104,13 @@ class TestEasySolutions {
         var sum4 = productSum(listOf(5, 2, listOf(-7, -1), 3))
         assertEquals(sum4, -6)
     }
+
+    @Test
+    fun testBinarySearch() {
+        var result = binarySearch(listOf(0, 1, 21, 33, 45, 45, 61, 71, 72, 73), 33)
+        assertEquals(result, 3)
+
+        var result2 = binarySearch(listOf(0, 1, 21, 33, 45, 45, 61, 71, 72, 73), 0)
+        assertEquals(result2, 0)
+    }
 }
