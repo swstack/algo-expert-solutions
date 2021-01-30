@@ -116,7 +116,13 @@ class TestEasySolutions {
 
     @Test
     fun testMinimumWaitingTime() {
-//        assertEquals(minimumWaitingTime(mutableListOf(3, 2, 1, 2, 6)), 17)
+        assertEquals(minimumWaitingTime(mutableListOf(3, 2, 1, 2, 6)), 17)
         assertEquals(minimumWaitingTimeBruteForce(mutableListOf(3, 2, 1, 2, 6)), 17)
+    }
+
+    @Test
+    fun testFindThreeLargestNumbers() {
+        val result = findThreeLargestNumbers(listOf(141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7))
+        assertEquals(result, listOf(18, 141, 541))
     }
 }
