@@ -130,4 +130,9 @@ class TestEasySolutions {
     fun testBubbleSort() {
         assertEquals(bubbleSort(mutableListOf(8, 5, 2, 9, 5, 6, 3)), mutableListOf(2, 3, 5, 5, 6, 8, 9))
     }
+
+    @Test
+    fun testInsertionSort() {
+        assertEquals(insertionSort(mutableListOf(8, 5, 2, 9, 5, 6, 3)), mutableListOf(2, 3, 5, 5, 6, 8, 9))
+    }
 }
