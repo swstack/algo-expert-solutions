@@ -125,4 +125,9 @@ class TestEasySolutions {
         val result = findThreeLargestNumbers(listOf(141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7))
         assertEquals(result, listOf(18, 141, 541))
     }
+
+    @Test
+    fun testBubbleSort() {
+        assertEquals(bubbleSort(mutableListOf(8, 5, 2, 9, 5, 6, 3)), mutableListOf(2, 3, 5, 5, 6, 8, 9))
+    }
 }
