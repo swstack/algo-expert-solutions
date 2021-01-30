@@ -140,4 +140,9 @@ class TestEasySolutions {
     fun testSelectionSort() {
         assertEquals(selectionSort(mutableListOf(8, 5, 2, 9, 5, 6, 3)), mutableListOf(2, 3, 5, 5, 6, 8, 9))
     }
+
+    @Test
+    fun testIsPalindrome() {
+        assertEquals(isPalindrome("abcdcba"), true)
+    }
 }
