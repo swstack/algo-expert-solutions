@@ -145,4 +145,10 @@ class TestEasySolutions {
     fun testIsPalindrome() {
         assertEquals(isPalindrome("abcdcba"), true)
     }
+
+    @Test
+    fun testCaesarCipherEncryptor() {
+        assertEquals(caesarCipherEncryptor("xyz", 2), "zab")
+        assertEquals(caesarCipherEncryptor("abc", 52), "abc")
+    }
 }
