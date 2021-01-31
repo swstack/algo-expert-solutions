@@ -151,4 +151,10 @@ class TestEasySolutions {
         assertEquals(caesarCipherEncryptor("xyz", 2), "zab")
         assertEquals(caesarCipherEncryptor("abc", 52), "abc")
     }
+
+    @Test
+    fun testRunLengthEncoding() {
+        assertEquals(runLengthEncoding("aaabbb"), "3a3b")
+        assertEquals(runLengthEncoding("aaaaaaaaaaaabbb"), "9a3a3b")
+    }
 }
