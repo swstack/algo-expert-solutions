@@ -1,6 +1,7 @@
 package algo.expert.solutions
 
 import algo.expert.solutions.easy.*
+import algo.expert.utils.loadSLL
 import algo.expert.utils.loadTree
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -156,5 +157,30 @@ class TestEasySolutions {
     fun testRunLengthEncoding() {
         assertEquals(runLengthEncoding("aaabbb"), "3a3b")
         assertEquals(runLengthEncoding("aaaaaaaaaaaabbb"), "9a3a3b")
+    }
+
+    @org.junit.Test
+    fun testRemoveDuplicatesFromLL() {
+        val json = """
+            {
+                "head": "1",
+                "nodes": [
+                  {"id": "1", "next": "1-2", "value": 1},
+                  {"id": "1-2", "next": "1-3", "value": 1},
+                  {"id": "1-3", "next": "2", "value": 1},
+                  {"id": "2", "next": "3", "value": 3},
+                  {"id": "3", "next": "3-2", "value": 4},
+                  {"id": "3-2", "next": "3-3", "value": 4},
+                  {"id": "3-3", "next": "4", "value": 4},
+                  {"id": "4", "next": "5", "value": 5},
+                  {"id": "5", "next": "5-2", "value": 6},
+                  {"id": "5-2", "next": null, "value": 6}
+                ]
+            }
+        """.trimIndent()
+
+        val sll = loadSLL(json)
+        assertNotNull(sll)
+        removeDuplicatesFromLinkedList(sll)
     }
 }
