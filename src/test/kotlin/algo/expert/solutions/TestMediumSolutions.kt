@@ -2,7 +2,6 @@ package algo.expert.solutions
 
 import algo.expert.solutions.medium.threeNumberSum
 import org.junit.Test
-import kotlin.test.assertEquals
 
 class TestMediumSolutions {
     @Test

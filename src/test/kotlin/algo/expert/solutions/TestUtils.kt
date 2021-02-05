@@ -3,6 +3,7 @@ package algo.expert.solutions
 import algo.expert.utils.GraphNode
 import algo.expert.utils.TreeNode
 import algo.expert.utils.loadGraph
+import algo.expert.utils.loadSLL
 import org.junit.Test
 import java.util.*
 import kotlin.test.assertEquals
@@ -89,5 +90,35 @@ class TestUtils {
         }
 
         assertEquals(visited, listOf("A", "D", "H", "G", "K", "C", "B", "F", "J", "I", "E"))
+    }
+
+    @Test
+    fun testLoadSLL() {
+        val json = """
+            {
+                "head": "1",
+                "nodes": [
+                  {"id": "1", "next": "1-2", "value": 1},
+                  {"id": "1-2", "next": "1-3", "value": 1},
+                  {"id": "1-3", "next": "2", "value": 1},
+                  {"id": "2", "next": "3", "value": 3},
+                  {"id": "3", "next": "3-2", "value": 4},
+                  {"id": "3-2", "next": "3-3", "value": 4},
+                  {"id": "3-3", "next": "4", "value": 4},
+                  {"id": "4", "next": "5", "value": 5},
+                  {"id": "5", "next": "5-2", "value": 6},
+                  {"id": "5-2", "next": null, "value": 6}
+                ]
+            }
+        """.trimIndent()
+
+        val sll = loadSLL(json)
+        assertNotNull(sll)
+
+        var next = sll
+        while (next != null) {
+            println(next.value)
+            next = next.next
+        }
     }
 }
