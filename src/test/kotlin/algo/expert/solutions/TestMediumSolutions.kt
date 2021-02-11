@@ -1,9 +1,6 @@
 package algo.expert.solutions
 
-import algo.expert.solutions.medium.isMonotonic
-import algo.expert.solutions.medium.moveElementToEnd
-import algo.expert.solutions.medium.smallestDifference
-import algo.expert.solutions.medium.threeNumberSum
+import algo.expert.solutions.medium.*
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -27,8 +24,30 @@ class TestMediumSolutions {
 
     @Test
     fun testMonotonicArray() {
-//        assertEquals(isMonotonic(listOf(1, 2, 3)), true)
-//        assertEquals(isMonotonic(listOf(-1, -5, -10, -1100, -900, -1101, -1102, -9001)), false)
+        assertEquals(isMonotonic(listOf(1, 2, 3)), true)
+        assertEquals(isMonotonic(listOf(-1, -5, -10, -1100, -900, -1101, -1102, -9001)), false)
         assertEquals(isMonotonic(listOf(1, 2, 0)), false)
+    }
+
+    @Test
+    fun testSpiralTraverse() {
+        val matrix = listOf(
+            listOf(1, 2, 3, 4),
+            listOf(12, 13, 14, 5),
+            listOf(11, 16, 15, 6),
+            listOf(10, 9, 8, 7)
+        )
+        val result = spiralTraverse(matrix)
+        assertEquals(result, listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16))
+
+        val matrix2 = listOf(
+            listOf(1, 2, 3, 4),
+            listOf(8, 7, 6, 5)
+        )
+        val result2 = spiralTraverse(matrix2)
+        assertEquals(result2, listOf(1, 2, 3, 4, 5, 6, 7, 8))
+
+        assertEquals(spiralTraverse(listOf(listOf(1, 2, 3, 4))), listOf(1, 2, 3, 4))
+        assertEquals(spiralTraverse(listOf(listOf(1), listOf(2), listOf(3), listOf(4))), listOf(1, 2, 3, 4))
     }
 }
