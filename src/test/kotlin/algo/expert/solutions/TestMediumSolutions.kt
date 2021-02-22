@@ -50,4 +50,9 @@ class TestMediumSolutions {
         assertEquals(spiralTraverse(listOf(listOf(1, 2, 3, 4))), listOf(1, 2, 3, 4))
         assertEquals(spiralTraverse(listOf(listOf(1), listOf(2), listOf(3), listOf(4))), listOf(1, 2, 3, 4))
     }
+
+    @Test
+    fun testLongestPeak() {
+        assertEquals(longestPeak(listOf(1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3)), 6)
+    }
 }
