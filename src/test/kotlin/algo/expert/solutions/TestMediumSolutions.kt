@@ -58,6 +58,13 @@ class TestMediumSolutions {
 
     @Test
     fun testArrayOfProducts() {
-        assertEquals(arrayOfProducts(listOf(5, 1, 4, 2)), listOf(8, 40, 10, 20));
+        assertEquals(arrayOfProducts(listOf(5, 1, 4, 2)), listOf(8, 40, 10, 20))
+    }
+
+    @Test
+    fun testFirstDuplicateValue() {
+        assertEquals(firstDuplicateValue(mutableListOf(2, 1, 5, 2, 3, 3, 4)), 2)
+        assertEquals(firstDuplicateValue(mutableListOf(2, 1, 5, 3, 3, 2, 4)), 3)
+        assertEquals(firstDuplicateValue(mutableListOf()), -1)
     }
 }
