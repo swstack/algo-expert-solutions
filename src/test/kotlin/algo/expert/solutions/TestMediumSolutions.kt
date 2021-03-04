@@ -55,4 +55,9 @@ class TestMediumSolutions {
     fun testLongestPeak() {
         assertEquals(longestPeak(listOf(1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3)), 6)
     }
+
+    @Test
+    fun testArrayOfProducts() {
+        assertEquals(arrayOfProducts(listOf(5, 1, 4, 2)), listOf(8, 40, 10, 20));
+    }
 }
