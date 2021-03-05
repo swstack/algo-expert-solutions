@@ -67,4 +67,29 @@ class TestMediumSolutions {
         assertEquals(firstDuplicateValue(mutableListOf(2, 1, 5, 3, 3, 2, 4)), 3)
         assertEquals(firstDuplicateValue(mutableListOf()), -1)
     }
+
+    @Test
+    fun testBSTConstruction() {
+        var bst = BST(10)
+        assertEquals(bst.contains(5), false)
+        bst.insert(5)
+        assertEquals(bst.contains(5), true)
+        bst.insert(15)
+        bst.insert(7)
+        assertEquals(bst.contains(7), true)
+        bst.remove(7)
+        assertEquals(bst.contains(7), false)
+        bst.remove(10)
+        assert(!bst.contains(10))
+    }
+
+    @Test
+    fun testBSTConstruction2() {
+        var bst = BST(10)
+        bst = bst.insert(5)
+        bst = bst.insert(15)
+        bst = bst.remove(10)
+        assertEquals(bst.value, 15)
+        assert(bst.right == null)
+    }
 }
