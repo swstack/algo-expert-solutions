@@ -103,6 +103,14 @@ class TestMediumSolutions {
         val bst2 = BST(10)
         bst.left = BST(15)
         bst.right = BST(5)
-        assert(!validateBst(bst))
+        assert(!validateBst(bst2))
+    }
+
+    @Test
+    fun testBSTTraversal() {
+        var bst = BST(10)
+        bst = bst.insert(5)
+        bst = bst.insert(15)
+        assertEquals(inOrderTraverse(bst, mutableListOf()), listOf(5, 10, 15))
     }
 }
