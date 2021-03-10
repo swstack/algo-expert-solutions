@@ -92,4 +92,17 @@ class TestMediumSolutions {
         assertEquals(bst.value, 15)
         assert(bst.right == null)
     }
+
+    @Test
+    fun testValidateBST() {
+        val bst = BST(10)
+        bst.left = BST(5)
+        bst.right = BST(15)
+        assert(validateBst(bst))
+
+        val bst2 = BST(10)
+        bst.left = BST(15)
+        bst.right = BST(5)
+        assert(!validateBst(bst))
+    }
 }
