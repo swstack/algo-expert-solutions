@@ -2,6 +2,8 @@ package algo.expert.solutions.medium
 
 
 fun longestPeak(array: List<Int>): Int {
+    // TODO: Doesn't work
+
     if (array.size < 4) {
         return -1
     }

@@ -1,5 +1,6 @@
 package algo.expert.solutions.medium
 
+import algo.expert.utils.BST
 
 fun inOrderTraverse(tree: BST, array: MutableList<Int>): List<Int> {
     if (tree.left != null) {
@@ -39,6 +40,22 @@ fun postOrderTraverse(tree: BST, array: MutableList<Int>): List<Int> {
     }
 
     array.add(tree.value)
+
+    return array
+}
+
+
+fun reverseInOrderTraverse(tree: BST, array: MutableList<Int>): List<Int> {
+
+    if (tree.right != null) {
+        reverseInOrderTraverse(tree.right!!, array)
+    }
+
+    array.add(tree.value)
+
+    if (tree.left != null) {
+        reverseInOrderTraverse(tree.left!!, array)
+    }
 
     return array
 }
