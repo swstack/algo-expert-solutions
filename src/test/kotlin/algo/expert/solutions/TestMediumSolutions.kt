@@ -149,4 +149,10 @@ class TestMediumSolutions {
         val bst = loadBST(json)
         assertEquals(findKthLargestValueInBst(bst!!, 3), 17)
     }
+
+    @Test
+    fun testWaysToMakeChange() {
+        assertEquals(numberOfWaysToMakeChange(10, listOf(2, 5, 10, 25)), 3)
+    }
+
 }
