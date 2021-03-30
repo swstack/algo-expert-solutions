@@ -1,32 +1,24 @@
 package algo.expert.solutions.medium
 
+import java.lang.Integer.min
+
 fun minNumberOfCoinsForChange(n: Int, denoms: List<Int>): Int {
-    if (n == 0) return 0
-
-    var leastCoins: Int? = null
-    for (split in denoms.indices) {
-        val left = denoms.subList(0, split)
-        val mid = denoms[split]
-        val right = denoms.subList(split + 1, denoms.size)
-        val combo  = mutableListOf<Int>()
-        combo.add(mid)
-        combo.addAll(left)
-        combo.addAll(right)
-
-        var tot = n
-        val coins = mutableListOf<Int>()
-        for (denom in combo) {
-            while (tot - denom >= 0) {
-                coins.add(denom)
-                tot -= denom
+    val coins = IntArray(n + 1) { -1 }
+    coins[0] = 0
+    for (d in denoms.sorted()) {
+        for (i in 1 until coins.size) {
+            if (d <= i) {
+                val remaining = i - d
+                val remainingCoins = coins[remaining]
+                if (remainingCoins != -1) {
+                    if (coins[i] == -1) {
+                        coins[i] = 1 + remainingCoins
+                    } else {
+                        coins[i] = min(coins[i], 1 + remainingCoins)
+                    }
+                }
             }
         }
-
-        if (leastCoins == null || coins.size < leastCoins) {
-            leastCoins = coins.size
-        }
-        println(combo)
     }
-
-    return leastCoins ?: -1
+    return coins[n]
 }

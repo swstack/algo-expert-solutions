@@ -159,5 +159,6 @@ class TestMediumSolutions {
     fun testMinCoinsForChange() {
 //        assertEquals(minNumberOfCoinsForChange(7, listOf(1, 5, 10)), 3)
         assertEquals(minNumberOfCoinsForChange(10, listOf(1, 3, 4)), 3)
+        assertEquals(minNumberOfCoinsForChange(9, listOf(3, 5)), 3)
     }
 }
