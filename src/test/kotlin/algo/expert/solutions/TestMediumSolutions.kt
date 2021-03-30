@@ -155,4 +155,9 @@ class TestMediumSolutions {
         assertEquals(numberOfWaysToMakeChange(10, listOf(2, 5, 10, 25)), 3)
     }
 
+    @Test
+    fun testMinCoinsForChange() {
+//        assertEquals(minNumberOfCoinsForChange(7, listOf(1, 5, 10)), 3)
+        assertEquals(minNumberOfCoinsForChange(10, listOf(1, 3, 4)), 3)
+    }
 }
