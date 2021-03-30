@@ -25,7 +25,6 @@ open class BST(value: Int) {
     }
 }
 
-
 fun loadBST(serialized: String): BST? {
     var bst: BST? = null
     var nodeMap = mutableMapOf<String, BST>()
