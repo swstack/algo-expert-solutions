@@ -157,8 +157,14 @@ class TestMediumSolutions {
 
     @Test
     fun testMinCoinsForChange() {
-//        assertEquals(minNumberOfCoinsForChange(7, listOf(1, 5, 10)), 3)
+        assertEquals(minNumberOfCoinsForChange(7, listOf(1, 5, 10)), 3)
         assertEquals(minNumberOfCoinsForChange(10, listOf(1, 3, 4)), 3)
         assertEquals(minNumberOfCoinsForChange(9, listOf(3, 5)), 3)
+        assertEquals(maxSubsetSumNoAdjacent(listOf(75, 105, 120, 75, 90, 135)), 330)
+    }
+
+    @Test
+    fun testWaysToTraverseGraph() {
+        assertEquals(numberOfWaysToTraverseGraph(4, 3), 10)
     }
 }
