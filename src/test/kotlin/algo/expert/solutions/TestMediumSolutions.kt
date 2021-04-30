@@ -160,6 +160,23 @@ class TestMediumSolutions {
         assertEquals(minNumberOfCoinsForChange(7, listOf(1, 5, 10)), 3)
         assertEquals(minNumberOfCoinsForChange(10, listOf(1, 3, 4)), 3)
         assertEquals(minNumberOfCoinsForChange(9, listOf(3, 5)), 3)
+
+        assertEquals(minNumberOfCoinsForChangeTreeNaive(7, listOf(1, 5, 10)), 3)
+        assertEquals(minNumberOfCoinsForChangeTreeNaive(10, listOf(1, 3, 4)), 3)
+        assertEquals(minNumberOfCoinsForChangeTreeNaive(9, listOf(3, 5)), 3)
+
+        // This test case OOM's
+        // assertEquals(minNumberOfCoinsForChangeTreeNaive(150, listOf(1, 5, 10, 7, 8, 9)), 3)
+
+        assertEquals(minNumberOfCoinsForChangeTreeOptimized(7, listOf(1, 5, 10)), 3)
+        assertEquals(minNumberOfCoinsForChangeTreeOptimized(10, listOf(1, 3, 4)), 3)
+        assertEquals(minNumberOfCoinsForChangeTreeOptimized(9, listOf(3, 5)), 3)
+        // This test case OOM's
+//        assertEquals(minNumberOfCoinsForChangeTreeOptimized(150, listOf(1, 5, 10, 7, 8, 9)), 3)
+    }
+
+    @Test
+    fun maxSubsetNoAdjacent() {
         assertEquals(maxSubsetSumNoAdjacent(listOf(75, 105, 120, 75, 90, 135)), 330)
     }
 
