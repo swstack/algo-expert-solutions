@@ -184,4 +184,11 @@ class TestMediumSolutions {
     fun testWaysToTraverseGraph() {
         assertEquals(numberOfWaysToTraverseGraph(4, 3), 10)
     }
+
+    @Test
+    fun testSingleCycleCheck() {
+        assertEquals(hasSingleCycle(listOf(1, 1, 1, 1, 2)), false)
+        assertEquals(hasSingleCycle(listOf(2, 3, 1, -4, -4, 2)), true)
+        assertEquals(hasSingleCycle(listOf(2, -7, 11, -2, 1)), true)
+    }
 }
