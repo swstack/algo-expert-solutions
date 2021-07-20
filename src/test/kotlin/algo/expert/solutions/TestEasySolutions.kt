@@ -1,6 +1,7 @@
 package algo.expert.solutions
 
 import algo.expert.solutions.easy.*
+import algo.expert.solutions.medium.MinHeapConstruction
 import algo.expert.utils.loadSLL
 import algo.expert.utils.loadTree
 import kotlin.test.Test
@@ -159,7 +160,7 @@ class TestEasySolutions {
         assertEquals(runLengthEncoding("aaaaaaaaaaaabbb"), "9a3a3b")
     }
 
-    @org.junit.Test
+    @Test
     fun testRemoveDuplicatesFromLL() {
         val json = """
             {
@@ -182,5 +183,12 @@ class TestEasySolutions {
         val sll = loadSLL(json)
         assertNotNull(sll)
         removeDuplicatesFromLinkedList(sll)
+    }
+
+    @Test
+    fun testMinHeapConstruction() {
+        val heap = MinHeapConstruction.MinHeap(listOf(3, 53, 12, 10, 5, 23, 9))
+        heap.insert(7)
+        println(heap)
     }
 }
