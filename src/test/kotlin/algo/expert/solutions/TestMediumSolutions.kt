@@ -191,4 +191,9 @@ class TestMediumSolutions {
         assertEquals(hasSingleCycle(listOf(2, 3, 1, -4, -4, 2)), true)
         assertEquals(hasSingleCycle(listOf(2, -7, 11, -2, 1)), true)
     }
+
+    @Test
+    fun testPermutations() {
+        Permutations.getPermutations(listOf(1, 2, 3))
+    }
 }
