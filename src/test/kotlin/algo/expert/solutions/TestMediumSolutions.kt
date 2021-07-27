@@ -196,4 +196,10 @@ class TestMediumSolutions {
     fun testPermutations() {
         Permutations.getPermutations(listOf(1, 2, 3))
     }
+
+    @Test
+    fun testPhoneNumberMnemonics() {
+        PhoneNumberMnemonics().phoneNumberMnemonics("123")
+    }
+
 }
