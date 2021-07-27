@@ -202,4 +202,8 @@ class TestMediumSolutions {
         PhoneNumberMnemonics().phoneNumberMnemonics("123")
     }
 
+    @Test
+    fun testStaircaseTraversal() {
+        StaircaseTraversal().staircaseTraversal(4, 2)
+    }
 }
